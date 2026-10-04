@@ -12,7 +12,8 @@ const requireFromProject = createRequire(join(projectRoot, "package.json"));
 function findPiRoot() {
 	if (process.env.PI_PACKAGE_DIR) return resolve(process.env.PI_PACKAGE_DIR);
 	try {
-		return resolve(dirname(requireFromProject.resolve("@earendil-works/pi-coding-agent")), "..");
+		const entry = fileURLToPath(import.meta.resolve("@earendil-works/pi-coding-agent"));
+		return resolve(dirname(entry), "..");
 	} catch {
 		return resolve(dirname(process.execPath), "../lib/node_modules/@earendil-works/pi-coding-agent");
 	}
