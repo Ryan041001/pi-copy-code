@@ -1,0 +1,45 @@
+{
+  "name": "pi-copy-code",
+  "version": "1.0.0",
+  "description": "Copy Markdown code blocks from completed Pi assistant replies to the system clipboard.",
+  "type": "module",
+  "author": "Ryan Shen",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "keywords": [
+    "pi-package",
+    "pi",
+    "pi-extension",
+    "clipboard",
+    "copy-code"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryan041001/pi-copy-code.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ryan041001/pi-copy-code/issues"
+  },
+  "homepage": "https://github.com/Ryan041001/pi-copy-code#readme",
+  "files": [
+    "extensions/",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check:package": "npm pack --dry-run"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/copy-code.ts"
+    ]
+  }
+}
